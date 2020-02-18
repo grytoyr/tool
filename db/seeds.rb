@@ -106,10 +106,10 @@ users_attributes = [
     email: 'flo@gmail.com',
     password: '123456',
     phone_number: '41541450',
-
   },
 ]
 User.create!(users_attributes)
+
 
 puts 'Creating tools...'
 
