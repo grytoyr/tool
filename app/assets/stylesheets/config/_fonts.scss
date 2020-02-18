@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Moderat-Light", "Helvetica", "sans-serif";
+$headers-font: "Moderat-Bold", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,86 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+@font-face {
+  font-family: 'Moderat-Black';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Black.eot') format('embedded-opentype'),
+      asset-url('Moderat-Black.woff') format('woff'),
+      asset-url('Moderat-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Moderat-Black-Italic';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-BlackItalic.eot') format('embedded-opentype'),
+      asset-url('Moderat-BlackItalic.woff') format('woff'),
+      asset-url('Moderat-BlackItalic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Bold';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Bold.eot') format('embedded-opentype'),
+      asset-url('Moderat-Bold.woff') format('woff'),
+      asset-url('Moderat-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Thin';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Thin.eot') format('embedded-opentype'),
+      asset-url('Moderat-Thin.woff') format('woff'),
+      asset-url('Moderat-Thin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Medium';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Medium.eot') format('embedded-opentype'),
+      asset-url('Moderat-Medium.woff') format('woff'),
+      asset-url('Moderat-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Black';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Black.eot') format('embedded-opentype'),
+      asset-url('Moderat-Black.woff') format('woff'),
+      asset-url('Moderat-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Moderat-Bold-Italic';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-BoldItalic.eot') format('embedded-opentype'),
+      asset-url('Moderat-BoldItalic.woff') format('woff'),
+      asset-url('Moderat-BoldItalic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Light';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-Light.eot') format('embedded-opentype'),
+      asset-url('Moderat-Light.woff') format('woff'),
+      asset-url('Moderat-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Moderat-Light-Italic';
+  font-weight: normal;
+  font-style: normal;
+  src:
+      asset-url('Moderat-LightItalic.eot') format('embedded-opentype'),
+      asset-url('Moderat-LightItalic.woff') format('woff'),
+      asset-url('Moderat-LightItalic.woff2') format('woff2');
+}
