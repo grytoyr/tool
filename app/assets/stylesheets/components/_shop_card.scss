@@ -1,0 +1,63 @@
+
+.shop-card {
+  width: 250px;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0,0,0,.3);
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+
+    & img {
+
+      width: 60%;
+    }
+
+}
+
+  .title {
+    font-family:  sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #23211f;
+    margin-bottom: 5px;
+  }
+
+.desc {
+    font-family: 'Open Sans Condensed';
+    font-size: 17px;
+    opacity: .8;
+    margin-bottom: 10px;
+  }
+
+.cta {
+
+    padding: 20px 10px 35px;
+
+  }
+
+.price {
+  font-family:  sans-serif;
+  height: 30px;
+  float: left;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.discount {
+
+font-family:  sans-serif;
+  float: right;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+   color: #FF3100;
+
+  //border: 1px solid #000000;
+  //border-radius: 20px;
+  //color: #000000;
+  //background-color: #ffffff;
+
+}
