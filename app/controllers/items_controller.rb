@@ -10,6 +10,15 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+
+  def rent
+  # define the item
+  # get the dates
+  # assign it to the current_user
+  # update the status of item as unavaiable
+  end
+
+
   def create
     @item = Item.new(item_params)
     @item.user = current_user
