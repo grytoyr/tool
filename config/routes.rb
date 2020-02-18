@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :items
-  get 'items/:id/rent', to: 'items#rent', as: 'rent_item'
+  resources :items do
+    resources :rentals, only: [:new, :create]
+  end
+
   devise_for :users
   root to: 'pages#home'
 

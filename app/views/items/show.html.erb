@@ -5,7 +5,6 @@
 <%= @item.available ? "available" : "unavailable" %>
 <%= @item.category %>
 
-
-<%= link_to "Rent", rent_item_path(@item) %>
+<%= link_to "Rent", new_rent_path(@item) %>
 <%= link_to "Edit", edit_item_path(@item) %>
 
