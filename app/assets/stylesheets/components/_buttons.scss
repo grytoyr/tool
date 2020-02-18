@@ -1,0 +1,44 @@
+.rent-button {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: white;
+  padding: 20px 30px;
+  background-color: $tool-red;
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  transition: 1s ease;
+}
+
+.rent-button:hover {
+  background-color: white;
+  color: $tool-red;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
+  }
+
+.button-icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+
+  i {
+    color: $tool-red;
+  }
+}
+
+.button-icon:hover {
+  background-color: $tool-red;
+
+  i {
+    color: white;
+  }
+}
