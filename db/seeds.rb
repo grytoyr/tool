@@ -65,6 +65,51 @@ PICTURES = [
 #   user.save!
 # end
 
+puts 'Creating users...'
+users_attributes = [
+  {
+    first_name: 'Alex',
+    last_name: 'Johnson',
+    address: 'Schweigaardsgate 34C, Oslo',
+    email: 'alex@gmail.com',
+    password: '123456',
+    phone_number: '47095092'
+  },
+  {
+    first_name: 'Doris',
+    last_name: 'Day',
+    address: 'Karl Johans gate 34C, Oslo',
+    email: 'doris@gmail.com',
+    password: '123456',
+    phone_number: '90028935'
+  },
+  {
+    first_name: 'Jan',
+    last_name: 'Olsen',
+    address: 'Paulus Plass 1C, Oslo',
+    email: 'jan@gmail.com',
+    password: '123456',
+    phone_number: '90023550'
+  },
+  {
+    first_name: 'Joanna',
+    last_name: 'Jansson',
+    address: 'Sofies Plass 3b, Oslo',
+    email: 'joanna@gmail.com',
+    password: '123456',
+    phone_number: '99281054'
+  },
+  {
+    first_name: 'Flo',
+    last_name: 'Jackson',
+    address: 'Akersgata 55, Oslo',
+    email: 'flo@gmail.com',
+    password: '123456',
+    phone_number: '41541450',
+  },
+]
+User.create!(users_attributes)
+
 
 puts 'Creating tools...'
 

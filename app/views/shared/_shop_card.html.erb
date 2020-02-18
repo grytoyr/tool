@@ -1,13 +1,13 @@
 <div class="shop-card">
   <div class="title">
-    Drill
+    <%= link_to item.name, item, class: "text-decoration-none text-dark" %>
   </div>
   <div class="desc">
     description
   </div>
-      <img src="https://www.felleskjopet.no/remote/bilder.felleskjopet.no/medias/sys_master/DefaultCelumAssetsFolder/celum_assets/h35/hfb/9191088750622/900020602321500-40318.jpg?scale=canvas" />
+      <img src="<%= cl_image_path item.photo.key %>" />
   <div class="cta">
-    <div class="price">6000 Nok</div>
-    <div class="discount">20% off</div>
+    <div class="price"><%= item.price %> <i class="fas fa-euro-sign"></i></div>
+    <div class="discount"><%= rand(5..20) %>% off</div>
   </div>
 </div>
