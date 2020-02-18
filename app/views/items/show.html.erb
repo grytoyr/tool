@@ -6,6 +6,9 @@
 <%= @item.available ? "available" : "unavailable" %>
 <%= @item.category %>
 
-<%= link_to "Rent", new_rent_path(@item) %>
+<%= link_to "Rent", new_item_rental_path(@item) %>
 <%= link_to "Edit", edit_item_path(@item) %>
+<%= link_to "Delete", @item,
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
 
