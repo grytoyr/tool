@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
   end
 
@@ -29,9 +30,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to @item
+    else
+      render :new
+    end
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :price, :description)
+    params.require(:item).permit(:name, :category, :price, :description, :photo)
   end
 end
