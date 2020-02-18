@@ -1,14 +1,45 @@
+<div class="show-page-wrap">
 
-<%= @item.name %>
-<%= cl_image_tag @item.photo.key %>
-<%= @item.description %>
-<%= @item.price %>
-<%= @item.available ? "available" : "unavailable" %>
-<%= @item.category %>
+  <div class="show-content-wrap">
+    <div class="show-content-info">
 
-<%= link_to "Rent", new_item_rental_path(@item) %>
-<%= link_to "Edit", edit_item_path(@item) %>
-<%= link_to "Delete", @item,
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
+       <div class="show-category">
+        <i class="fas fa-tools"></i>
+        <%= @item.category %>
+      </div>
 
+      <h1><%= @item.name %></h1>
+
+      <p><%= @item.description %></p>
+
+      <div class="price-wrap">
+        <h3><%= @item.price %> kr / day</h3>
+        <div class="show-available">
+        <%= @item.available ? "available" : "unavailable" %>
+        </div>
+      </div>
+
+      <div class="button-wrap">
+
+        <%= link_to "Check availability", new_item_rental_path(@item), class: 'rent-button' %>
+
+        <%= link_to edit_item_path(@item), class: 'button-icon' do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= link_to @item, class: 'button-icon',
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+
+    </div>
+
+    <%= cl_image_tag @item.photo.key, class:"show-image" %>
+
+  </div>
+
+
+
+</div>
