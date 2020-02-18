@@ -1,0 +1,10 @@
+
+<%= @item.name  %>
+<%= @item.description %>
+<%= @item.price %>
+<%= @item.available ? "available" : "unavailable" %>
+<%= @item.category %>
+
+
+<%= link_to "Edit", edit_item_path(@item) %>
+
