@@ -16,6 +16,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
+gem 'active_storage_validations', '~> 0.8.7'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

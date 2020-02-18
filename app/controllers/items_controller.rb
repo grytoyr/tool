@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @items = Item.all
   end
@@ -25,6 +27,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :price, :description)
+    params.require(:item).permit(:name, :category, :price, :description, :photo)
   end
 end

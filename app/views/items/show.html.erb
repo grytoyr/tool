@@ -1,5 +1,6 @@
 
-<%= @item.name  %>
+<%= @item.name %>
+<%= cl_image_tag @item.photo.key %>
 <%= @item.description %>
 <%= @item.price %>
 <%= @item.available ? "available" : "unavailable" %>
