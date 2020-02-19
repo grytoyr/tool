@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :rentals, only: [:new, :create]
   end
+  get '/dashboard', to: 'items#dashboard', as: :dashboard
+
 
   devise_for :users
   root to: 'pages#home'

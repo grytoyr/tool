@@ -1,0 +1,12 @@
+<h1>My Tools</h1>
+<% @user.items.each do |item| %>
+<p><%= item.name %> </p>
+<% end %>
+
+<h1>Tools I am renting</h1>
+<%  @user.rentals.each do |item| %>
+<%= item.name %>
+<% end%>
+
+
+
