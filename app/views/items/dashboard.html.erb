@@ -7,15 +7,9 @@
 <% end %>
 
 <h1>Tools I am renting</h1>
-<%  current_user.rentals.each do |item| %>
-<%= item.name %>
-<% end%>
-
+<%  current_user.rentals.each do |rental| %>
+  <%= rental.item.name %>
+  <% end %>
 <% else %>
 <p>Log in to see your Dashboard</p>
 <% end  %>
-
-
-
-
-
