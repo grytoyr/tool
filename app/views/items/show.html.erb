@@ -22,16 +22,19 @@
       <div class="button-wrap">
 
         <%= link_to "Check availability", new_item_rental_path(@item), class: 'rent-button' %>
-
-        <%= link_to edit_item_path(@item), class: 'button-icon' do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-
-        <%= link_to @item, class: 'button-icon',
+        <% if current_user == @item.user %>
+          <%= link_to edit_item_path(@item), class: 'button-icon' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+           <%= link_to @item, class: 'button-icon',
                       method: :delete,
                       data: { confirm: "Are you sure?" } do %>
         <i class="far fa-trash-alt"></i>
         <% end %>
+        <% end %>
+
+
+
       </div>
 
     </div>
@@ -43,3 +46,5 @@
 
 
 </div>
+
+
