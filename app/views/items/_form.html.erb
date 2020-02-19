@@ -1,21 +1,22 @@
-<%= simple_form_for item do |f| %>
- <% if @item.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @item.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+     <%= simple_form_for item do |f| %>
+       <% if @item.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :category %>
-  <%= f.input :photo, as: :file %>
-  <div class="submit">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :category %>
+        <%= f.input :photo, as: :file %>
+        <div class="submit">
+          <%= f.button :submit, class:"rent-button" %>
+        </div>
+      <% end %>
+
 
 

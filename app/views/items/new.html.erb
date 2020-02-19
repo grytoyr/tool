@@ -1,5 +1,20 @@
-<h1>Create a new Item</h1>
+<div class="form-background">
 
-<%= render 'form', item: @item %>
+  <div class="container-lg">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 tool-form">
 
-<%= link_to "Back to Tools List", items_path  %>
+        <h1>Add a tool to rent</h1>
+
+        <%= render 'form', item: @item %>
+
+        <div class="form-back">
+          <%= link_to "Back to Tools List", items_path  %>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

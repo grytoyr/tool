@@ -42,3 +42,29 @@
     color: white;
   }
 }
+
+#form-control.email {
+  font-size: 1rem;
+}
+
+
+.form-button {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 800;
+  font-size: 14px;
+  color: white;
+  padding: 15px 25px;
+  background-color: $tool-red;
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  transition: 1s ease;
+}
+
+.rent-button:hover {
+  background-color: white;
+  color: $tool-red;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
+  }
