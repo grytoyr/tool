@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    if @item.save(item_params)
       redirect_to @item
     else
       render :edit
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
+    # @user = current_user
     # @user_items = current_user.items
     # @rented_items = current_user.items.rentals
   end
