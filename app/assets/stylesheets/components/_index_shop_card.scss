@@ -16,12 +16,15 @@
 
   .card-product-infos {
     width: 100%;
+    span {
+      font-size: 14px;
+    }
   }
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 20%;
   object-fit: cover;
 }
 
@@ -46,3 +49,4 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
