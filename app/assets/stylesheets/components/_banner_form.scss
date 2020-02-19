@@ -1,0 +1,33 @@
+.banner-button {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: white;
+  padding: 15px 20px;
+  background-color: $tool-red;
+  border-radius: 0px 25px 25px 0px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  transition: 1s ease;
+  border: none;
+}
+
+.banner-button:hover {
+  background-color: white;
+  color: $tool-red;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
+  }
+
+#banner-input {
+  padding: 15px 20px;
+  border-radius: 25px 0px 0px 25px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  border: none;
+  width: 500px;
+}
+
+#banner-input:focus {
+  outline: none;
+}
