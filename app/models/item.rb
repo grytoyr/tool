@@ -3,4 +3,8 @@ class Item < ApplicationRecord
   has_many :rentals
   has_one_attached :photo
   validates :photo, attached: true
+  validates :price, presence: true
+  validates :name, presence: true
+  validates :category, presence: true
+  validates :description, presence: true
 end
