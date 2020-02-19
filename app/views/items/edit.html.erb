@@ -1,10 +1,23 @@
-<h1>Edit Item</h1>
+<div class="form-background">
 
-<% if current_user == @item.user %>
-  <%= render 'form', item: @item %>
-<% else %>
-  <h1>You do not own this tool</h1>
-<% end %>
+  <div class="container-lg">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 tool-form">
 
+        <h1>Edit Item</h1>
 
-<%= link_to "Back to Item", @item  %>
+        <% if current_user == @item.user %>
+          <%= render 'form', item: @item %>
+        <% else %>
+          <h1>You do not own this tool</h1>
+        <% end %>
+
+        <div class="form-back">
+          <%= link_to "Back to Item", @item  %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

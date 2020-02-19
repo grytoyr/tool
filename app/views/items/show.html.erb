@@ -3,17 +3,23 @@
   <div class="show-content-wrap">
     <div class="show-content-info">
 
-       <div class="show-category">
-        <i class="fas fa-tools"></i>
-        <%= @item.category %>
-       </div>
+      <%= link_to "Back", items_path, class: "back-link" %>
 
       <h1><%= @item.name %></h1>
 
       <p><%= @item.description %></p>
 
-      <p>Owner: <%= @item.user.first_name %></p>
 
+      <div class="show-details">
+        <div class="show-owner-category">
+          <i class="fas fa-user"></i>
+          <%= @item.user.first_name %>
+        </div>
+        <div class="show-owner-category">
+          <i class="fas fa-tools"></i>
+          <%= @item.category %>
+       </div>
+      </div>
 
       <div class="price-wrap">
         <h3><%= @item.price %> kr / day</h3>
