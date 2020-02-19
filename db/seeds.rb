@@ -122,14 +122,13 @@ puts 'Creating tools...'
     name: Faker::Commerce.product_name,
     description: Faker::Hipster.paragraphs(number: 2).join(" "),
     price: rand(50..300),
-    user_id: rand(1..5),
+    user: User.all.sample,
     category: CATEGORIES.sample,
     address: ADDRESS.sample
   )
 
   item.photo.attach(io: file, filename: "#{Faker::Commerce.product_name}.png", content_type: 'image/png')
   item.save!
-  sleep(2);
 end
 
 # tools_attributes = [
@@ -167,20 +166,20 @@ end
 puts 'Creating rentals...'
 rental_attributes = [
   {
-    item_id: 1,
-    user_id: 2,
+    item: Item.first,
+    user: User.first,
     start_date: Date.today,
     end_date: Date.today
   },
     {
-    item_id: 2,
-    user_id: 1,
+    item: Item.last,
+    user: User.last,
     start_date: Date.today,
     end_date: Date.today
   },
     {
-    item_id: 3,
-    user_id: 2,
+    item: Item.all[1],
+    user: User.last,
     start_date: Date.today,
     end_date: Date.today
   }
