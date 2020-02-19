@@ -2,9 +2,16 @@
   <div class="card-product">
     <img src= "<%= cl_image_path item.photo.key %>" />
     <div class="card-product-infos">
-      <h2><%= link_to item.name, item %></h2>
-      <p><strong><%= item.category %></strong></p>
-      <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-sm mt-2"%>
+      <div class="row justify-content-between px-3">
+        <div>
+          <h2><%= link_to item.name, item %></h2>
+          <p><strong><%= item.category %></strong></p>
+        </div>
+        <div>
+          <h3><%= item.price %> Kr</h3>
+          <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-md mt-2"%>
+        </div>
+      </div>
     </div>
   </div>
 </div>

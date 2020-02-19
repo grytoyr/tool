@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @items = Item.all
+    @items = Item.all.where('address LIKE ?', '%Oslo%')
 
-    @items_map = Item.geocoded #returns flats with coordinates
+    @items_map = @items.geocoded #returns flats with coordinates
 
     @markers = @items_map.map do |flat|
       {
