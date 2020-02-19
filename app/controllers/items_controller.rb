@@ -5,6 +5,15 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+
+    @items_map = Item.geocoded #returns flats with coordinates
+
+    @markers = @items_map.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def new

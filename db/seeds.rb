@@ -16,7 +16,8 @@ ADDRESS = [
   'Hertug Skules vei 6, Fredrikstad',
   'Henrik Ibsensgate 2, Oslo',
   'Akersbakken 2, Oslo',
-  'Konowsgate 3, Oslo'
+  'Konowsgate 3, Oslo',
+  'Oddohagen 5b 3, Stavanger',
 ]
 
 CATEGORIES = [
@@ -122,11 +123,13 @@ puts 'Creating tools...'
     description: Faker::Hipster.paragraphs(number: 2).join(" "),
     price: rand(50..300),
     user_id: rand(1..5),
-    category: CATEGORIES.sample
+    category: CATEGORIES.sample,
+    address: ADDRESS.sample
   )
 
   item.photo.attach(io: file, filename: "#{Faker::Commerce.product_name}.png", content_type: 'image/png')
   item.save!
+  sleep(2);
 end
 
 # tools_attributes = [

@@ -1,0 +1,10 @@
+<div class="product-cards">
+  <div class="card-product">
+    <img src= "<%= cl_image_path item.photo.key %>" />
+    <div class="card-product-infos">
+      <h2><%= link_to item.name, item %></h2>
+      <p><strong><%= item.category %></strong></p>
+      <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-sm mt-2"%>
+    </div>
+  </div>
+</div>
