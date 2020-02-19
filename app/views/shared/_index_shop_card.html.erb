@@ -7,9 +7,9 @@
           <h2><%= link_to item.name, item %></h2>
           <p><strong><%= item.category %></strong></p>
         </div>
-        <div>
-          <h3><%= item.price %> Kr</h3>
-          <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-md mt-2"%>
+        <div class="flex-row text-right">
+          <h3><%= item.price %> Kr <span class="text-muted">/ day</span></h3>
+          <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-md mt-2 text-center"%>
         </div>
       </div>
     </div>
