@@ -1,15 +1,38 @@
 
-<% if current_user %>
-<h1>My Tools</h1>
 
-<% current_user.items.each do |item| %>
-<p><%= item.name %> </p>
-<% end %>
 
-<h1>Tools I am renting</h1>
-<%  current_user.rentals.each do |rental| %>
-  <%= rental.item.name %>
-  <% end %>
-<% else %>
-<p>Log in to see your Dashboard</p>
-<% end  %>
+<div class='dashboard'>
+
+
+  <% if current_user %>
+
+
+  <div class='dashboard_element'>
+      <h1>My Tools</h1>
+      <% current_user.items.each do |item| %>
+    <p><%= item.name %> </p>
+    <% end %>
+  </div>
+
+
+   <div class='dashboard_element'>
+       <h1>Tools I am renting</h1>
+    <%  current_user.rentals.each do |rental| %>
+      <%= rental.item.name %>
+      <% end %>
+  </div>
+   <% else %>
+   <div class ="dashboard_element">
+      <p>Log in to see your Dashboard</p>
+    <% end  %>
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
