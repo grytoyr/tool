@@ -1,0 +1,35 @@
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: white;
+  margin-top: 30px;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 1s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.saw {
+  background-image:
+  linear-gradient(to top, rgba(42, 57, 80, 1), rgba(244, 72, 104, 0.3)),
+    asset-url('saw.jpg');
+}
+
+.garden {
+  background-image:
+  linear-gradient(to top, rgba(42, 57, 80, 1), rgba(244, 72, 104, 0.3)),
+    asset-url('lawnmower.jpg');
+}
+
+.drill {
+  background-image:
+  linear-gradient(to top, rgba(42, 57, 80, 1), rgba(244, 72, 104, 0.3)),
+    asset-url('drill.jpg');
+}
