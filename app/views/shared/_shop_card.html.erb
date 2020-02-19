@@ -1,13 +1,13 @@
 <div class="shop-card">
   <div class="title">
-    <%= link_to item.name, item, class: "text-decoration-none text-dark" %>
+    <%= link_to item.name, item, class: "text-decoration-none" %>
   </div>
   <div class="desc">
     description
   </div>
       <img src="<%= cl_image_path item.photo.key %>" />
   <div class="cta">
-    <div class="price"><%= item.price %> <i class="fas fa-euro-sign"></i></div>
+    <div class="price"><%= item.price %> Kr</i></div>
     <div class="discount"><%= rand(5..20) %>% off</div>
   </div>
 </div>

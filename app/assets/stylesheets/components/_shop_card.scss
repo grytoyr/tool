@@ -4,7 +4,7 @@
   // height: 100%;
   background: white;
   box-shadow: 0 5px 10px rgba(0,0,0,.3);
-  border-radius: 5px;
+  // border-radius: 5px;
   padding: 15px;
   text-align: center;
 
@@ -14,10 +14,18 @@
       object-fit: cover;
     }
 
+    a {
+      color: $tool-dark;
+    }
+
+    a:hover {
+      color: red;
+    }
+
 }
 
   .title {
-    font-family:  sans-serif;
+    font-family:  $headers-font;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 20px;
@@ -55,7 +63,7 @@ font-family:  sans-serif;
   border: none;
   font-size: 18px;
   text-transform: uppercase;
-  color: #FF3100;
+  color: $tool-red;
 
   //border: 1px solid #000000;
   //border-radius: 20px;
