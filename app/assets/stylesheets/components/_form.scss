@@ -1,0 +1,45 @@
+.form-background {
+  min-height: 100vh;
+  background: rgb(42,57,80);
+background: linear-gradient(-45deg, rgba(42,57,80,1) 0%, rgba(151,64,99,1) 100%);
+}
+
+.tool-form{
+  margin-top: 80px;
+  color: white;
+  margin-bottom: 30px;
+
+  h1 {
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  input{
+    border-radius: 30px;
+    font-size: 1rem;
+  }
+
+  #item_photo {
+    border-radius: 0;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .invalid-feedback {
+    color: white;
+  }
+
+  .item_description {
+    border-radius: 30px;
+  }
+
+  .form-back {
+    margin-top: 40px;
+
+    a {
+      color: white;
+    }
+  }
+}
