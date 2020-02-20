@@ -10,9 +10,6 @@ margin: 10px;
 
 }
 
-.dashboard-title {
-  padding: 10px 20px;
-}
 
 .dashboard-list {
   list-style: none;
@@ -20,6 +17,7 @@ margin: 10px;
 }
 
 .dashboard-list-element {
+  display: flex;
 
 
 }
@@ -28,6 +26,13 @@ margin: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+}
+
+.db-image {
+
+}
+.db-el-container {
 
 }
 
