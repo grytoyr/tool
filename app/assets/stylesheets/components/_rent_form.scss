@@ -1,0 +1,31 @@
+.tool-form {
+  display: flex;
+}
+
+.new_rental {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.invalid-feedback {
+  color: $tool-red;
+}
+
+.tool-form-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rental_start_date {
+  width: 48%;
+  background-color: white;
+  border: rgba(0, 0, 0, 0.5);
+}
+
+.rental_end_date {
+  width: 48%;
+}

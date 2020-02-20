@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :items do
-    resources :rentals, only: [:new, :create]
+    resources :rentals, only: [:create]
   end
   get '/dashboard', to: 'items#dashboard', as: :dashboard
 
