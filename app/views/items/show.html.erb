@@ -3,7 +3,21 @@
   <div class="show-content-wrap">
     <div class="show-content-info">
 
-      <%= link_to "Back", items_path, class: "back-link" %>
+        <div class="button-wrap">
+         <%= link_to edit_item_path(@item), class: 'button-icon' do %>
+            <i class="fas fa-long-arrow-alt-left"></i>
+          <% end %>
+        <% if current_user == @item.user %>
+          <%= link_to edit_item_path(@item), class: 'button-icon' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+           <%= link_to @item, class: 'button-icon',
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
 
       <h1><%= @item.name %></h1>
 
@@ -22,38 +36,19 @@
       </div>
 
       <div class="price-wrap">
-        <h3><%= @item.price %> kr / day</h3>
         <div class="show-available">
-        <%= @item.available ? "available" : "unavailable" %>
+          <%= link_to "Check availability", "#", class: 'rent-button', id: 'rent-form-button' %>
         </div>
+          <h3><%= @item.price %> kr / day</h3>
       </div>
 
-      <div class="button-wrap">
-
-        <%= link_to "Check availability", new_item_rental_path(@item), class: 'rent-button' %>
-        <% if current_user == @item.user %>
-          <%= link_to edit_item_path(@item), class: 'button-icon' do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
-           <%= link_to @item, class: 'button-icon',
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } do %>
-        <i class="far fa-trash-alt"></i>
-        <% end %>
-        <% end %>
-
-
-
-      </div>
+      <%= render 'items/rental_form', item: @item, rental: @rental %>
 
     </div>
 
     <%= cl_image_tag @item.photo.key, class:"show-image" %>
 
   </div>
-
-
-
 </div>
 
 
