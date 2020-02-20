@@ -49,6 +49,12 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def dashboard
+    # @user = current_user
+    # @user_items = current_user.items
+    # @rented_items = current_user.items.rentals
+  end
+
   private
 
   def set_item
