@@ -4,6 +4,7 @@
 
   <% if current_user %>
   <div class='dashboard-element'>
+
     <div class='dashboard-header'>
       <div class='dashboard-title'>
         <h2>My Tools</h2>
@@ -14,48 +15,54 @@
           <% end %>
       </div>
     </div>
+
       <ul class='dashboard-list'>
         <% current_user.items.each do |item| %>
-        <div class='dashboard-list-element'></div>
-          <li>
-            <p>Tool: <%= item.name %> </p>
-            <p>Description: <%= item.description %> </p>
+        <div class='dashboard-list-element'>
+           <li>
+            <div class="db-el-wrap">
+
+              <div>
+              <%= cl_image_tag item.photo.key, class:"show-image" %>
+            </div>
+            <h3><%= link_to "#{item.name }", item_path(item) %> </h3>
+             <div class="button-wrap">
+              <%= link_to  @item, class: 'button-icon',
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt"></i>
+                  <% end %>
+            </div>
+            </div>
             <div class="price-wrap">
               <h3><%= item.price %> kr / day</h3>
               <div class="show-available">
               <%= item.available ? "available" : "unavailable" %>
               </div>
             </div>
-            <div class="button-wrap">
-              <%= link_to  @item , class: 'button-icon',
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } do %>
-                        <i class="far fa-trash-alt"></i>
-                        <% end %>
-            </div>
-            <div>
-              <%= cl_image_tag item.photo, class:"show-image" %>
-            </div>
           </li>
+        </div>
         <% end %>
       </ul>
   </div>
+
     <div class='dashboard-element'>
       <div class='dashboard-title'>
-         <h2>Tools I am renting</h2>
+         <h3>Tools I am renting</h3>
       </div>
       <ul class='dashboard-list'>
         <%  current_user.rentals.each do |rental| %>
-        <div>
-          <li>
-             <p> Tool: <%= rental.item.name %></p>
-             <p> Description:<%= rental.item.description %> </p>
-             <p> Price: <%= rental.item.price %></p>
-             <p>Owner: <%= link_to "#{rental.item.user.first_name}", items_path  %></p>
-              <div>
-                <%= cl_image_tag rental.item.photo, class:"show-image" %>
-              </div>
-          </li>
+          <div class="dashboard-list-element">
+              <li>
+                <div>
+                  <%= cl_image_tag rental.item.photo.key, class:"show-image" %>
+                </div>
+                <h3><%= link_to "#{rental.item.name }", item_path(rental.item) %> </h3>
+                <div class="price-wrap">
+                  <h3><%= rental.item.price %> kr / day </h3>
+                  <h3 class="show-owner"><%= link_to "#{rental.item.user.first_name}", items_path  %></h3>
+                </div>
+              </li>
         </div>
         <% end %>
       </ul>

@@ -86,6 +86,16 @@
     display: flex;
     justify-content: center;
   }
+
+  .show-owner {
+     text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.8rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+  }
 }
 
 .show-details {
