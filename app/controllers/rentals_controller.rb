@@ -1,8 +1,4 @@
 class RentalsController < ApplicationController
-  def new
-    @rental = Rental.new
-    @item = Item.find(params[:item_id])
-  end
 
   def create
     @rental = Rental.new(rental_params)
@@ -10,9 +6,13 @@ class RentalsController < ApplicationController
     @user = current_user
     @rental.item = @item
     @rental.user = @user
-    @rental.save
-    flash[:notice] = "Congratulations on renting a tool from the pool!"
-    redirect_to item_path(@item)
+    if @rental.save
+      flash[:notice] = "Congratulations on renting a tool from the pool!"
+      redirect_to item_path(@item)
+    else
+      flash[:alert] = "Sorry, this tool is already booked for this period of time."
+      render 'items/show'
+    end
   end
 
  private

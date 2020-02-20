@@ -8,6 +8,8 @@ import 'flatpickr/dist/flatpickr.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleDateInputs } from '../plugins/init_flatpickr';
+import { toggleForm} from '../components/init_show_form'
 
 initMapbox();
 toggleDateInputs();
+toggleForm();

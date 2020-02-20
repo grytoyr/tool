@@ -1,4 +1,18 @@
 class Item < ApplicationRecord
+
+  CATEGORIES = [
+    'Drill',
+    'Garden',
+    'Saw',
+    'Hammer',
+    'Painting tool',
+    'Electrical tool',
+    'Screwdrivers',
+    'Cleaning tool',
+    'Accessories',
+    'Hand tool'
+  ]
+
   belongs_to :user
   has_many :rentals
   has_many :users, through: :rentals
@@ -9,6 +23,7 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :name, presence: true
   validates :category, presence: true
+  validates :category, inclusion: { in: CATEGORIES }
   validates :description, presence: true
 
   def unavailable_dates

@@ -8,9 +8,11 @@
 
 .show-image {
   width: 50%;
-  height: 100%;
+  height: 600px;
   object-fit: cover;
   object-position: center;
+  position: sticky;
+  top: 100px;
 }
 
 .show-content-wrap {
@@ -53,6 +55,7 @@
 .button-wrap {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .show-owner-category {
@@ -72,19 +75,18 @@
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   h3 {
     width: 50%;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 
   .show-available {
-    text-transform: uppercase;
-    letter-spacing: 0.3rem;
-    font-size: 0.8rem;
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
 
   .show-owner {
