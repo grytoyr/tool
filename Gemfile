@@ -20,6 +20,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'active_storage_validations', '~> 0.8.7'
 gem 'faker'
 gem 'pundit'
+gem 'pg_search', '~> 2.3.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
