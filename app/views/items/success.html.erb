@@ -1,0 +1,20 @@
+<div class="success-page-wrap">
+  <div class="success-pop">
+    <%= image_tag 'symbol.svg', class:"success-symbol" %>
+    <h2>Thanks, <%= @user %>!</h2>
+
+    <% if @days == 1 %>
+      <h5>You just rented <%= @item.name %> from <%= @owner %> for <%= @days %> day. The total amount is <span><%= @price %> kr.</span></h5>
+    <% else %>
+      <h5>You just rented <%= @item.name %> from <%= @owner %> for <%= @days %> days. The total amount is <span><%= @price %> kr.</span></h5>
+    <% end %>
+
+    <h5>What do you want to do next?</h5>
+
+    <div class="button-wrap-success">
+      <%= link_to "Go to my dashboard", dashboard_path, class: 'rent-button' %>
+      <p></p>
+      <%= link_to "Browse more tools", root_path, class: 'rent-button' %>
+    </div>
+  </div>
+</div>

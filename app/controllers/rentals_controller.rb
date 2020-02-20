@@ -8,7 +8,7 @@ class RentalsController < ApplicationController
     @rental.user = @user
     if @rental.save
       flash[:notice] = "Congratulations on renting a tool from the pool!"
-      redirect_to item_path(@item)
+      redirect_to success_item_path(@item)
     else
       flash[:alert] = "Sorry, this tool is already booked for this period of time."
       render 'items/show'
