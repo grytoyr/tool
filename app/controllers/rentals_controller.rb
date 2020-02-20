@@ -5,11 +5,12 @@ class RentalsController < ApplicationController
   end
 
   def create
-  @rental = Rental.new(rental_params)
-  @item = Item.find(params[:item_id])
-  @rental.item = @item
-  @rental.save
-  redirect_to item_path(@item)
+    @rental = Rental.new(rental_params)
+    @item = Item.find(params[:item_id])
+    @rental.item = @item
+    @rental.save
+    flash[:notice] = "Congratulations on renting a tool from the pool!"
+    redirect_to item_path(@item)
   end
 
  private
