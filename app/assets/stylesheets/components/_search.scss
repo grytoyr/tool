@@ -1,11 +1,28 @@
 .search-navbar {
+
   .rent-button {
-    height: 38px;
-    transition: 0.3s ease;
-    letter-spacing: 0.1rem;
+  font-weight: bold;
+  color: white;
+  padding: 7px 20px;
+  background-color: $tool-red;
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  transition: color 1s ease;
+  transition: background-color 1s ease;
+  border: none;
+}
+
+.rent-button:hover {
+  background-color: white;
+  color: $tool-red;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
   }
 }
 
 #query {
   min-width: 400px;
 }
+
+

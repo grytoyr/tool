@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  has_many :items
+  has_many :items, dependent: :destroy
   has_many :rentals
-  has_many :items, through: :rentals
   validates_presence_of :first_name, :last_name, :phone_number, :address
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

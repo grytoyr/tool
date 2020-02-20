@@ -15,7 +15,7 @@
     </div>
 
       <ul class='dashboard-list'>
-        <% current_user.items.each do |item| %>
+        <% @my_tools.each do |item| %>
           <li>
             <%= cl_image_tag item.photo.key, class:"db-image" %>
             <div class="db-el-container">
@@ -44,7 +44,7 @@
       </div>
 
       <ul class='dashboard-list'>
-        <%  current_user.rentals.each do |rental| %>
+        <%  @my_rentals.each do |rental| %>
           <li>
             <%= cl_image_tag rental.item.photo.key, class:"show-image" %>
             <div class="db-el-container">
