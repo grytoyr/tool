@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :success]
 
   skip_before_action :authenticate_user!, only: [:index]
 
@@ -63,6 +63,14 @@ class ItemsController < ApplicationController
     # @user = current_user
     # @user_items = current_user.items
     # @rented_items = current_user.items.rentals
+  end
+
+  def success
+    @rental = @item.rentals.last
+    @days = (@rental.end_date.to_date - @rental.start_date.to_date).to_i + 1
+    @owner = @rental.user.first_name
+    @price = @days * @item.price
+    @user = current_user.first_name
   end
 
   private

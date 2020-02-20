@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :items do
     resources :rentals, only: [:create]
+      member do
+        get 'success'
+      end
   end
   get '/dashboard', to: 'items#dashboard', as: :dashboard
 
