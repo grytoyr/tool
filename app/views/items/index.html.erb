@@ -1,15 +1,15 @@
-<h1 class="px-4 pt-4">Search results</h1>
 
 <!-- <div class="container w-100"> -->
   <div class="row p-2 w-100 m-0">
-    <div class="col-sm-12 col-md-7">
+    <div class="col-sm-12 col-md-7 pl-2">
+    <h1 class="py-4">Search results</h1>
      <% @items.each do |item| %>
       <div class="pb-4">
         <%= render partial:'shared/index_shop_card', locals: {item: item}%>
       </div>
     <% end %>
     </div>
-    <div class="col-sm-12 col-md-5 p-0 pb-4">
+    <div class="col-sm-12 col-md-5 p-0 pl-1 pb-4">
       <div class="sticky-top">
       <div
         id="map"

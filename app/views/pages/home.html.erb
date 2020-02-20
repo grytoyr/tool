@@ -6,10 +6,16 @@
         <div class="banner-title">
           <h1>Stop buying expensive tools you rarely use. Rent it.</h1>
         </div>
-        <form action="#" method="POST" class="banner-form">
-          <input type="text" id="banner-input" placeholder="What are you looking for?">
-          <input type="submit" class="banner-button" value="Search">
-        </form>
+        <div>
+          <%= form_tag items_path, method: :get, class: "banner-form" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              id: "banner-input",
+              placeholder: "What are you looking for?"
+            %>
+            <%= submit_tag "Search", class: "banner-button" %>
+          <% end %>
+        </div>
         <%= link_to 'Browse tools', items_path, class:"rent-button" %>
       </div>
     </div>

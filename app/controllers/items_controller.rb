@@ -4,7 +4,12 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @items = Item.all.where('address LIKE ?', '%Oslo%').order(updated_at: :desc)
+
+    if params[:query].present?
+      @items = Item.global_search("#{params[:query]}")
+    else
+      @items = Item.all
+    end
 
     @items_map = @items.geocoded #returns flats with coordinates
 
