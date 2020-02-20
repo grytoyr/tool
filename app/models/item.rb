@@ -10,4 +10,10 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :category, presence: true
   validates :description, presence: true
- end
+
+  def unavailable_dates
+    rentals.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
+end
