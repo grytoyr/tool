@@ -1,6 +1,6 @@
 <div class="product-cards">
   <div class="card-product">
-    <img src= "<%= cl_image_path item.photo.key %>" />
+    <img src= "<%= cl_image_path item.photo.key, width: 400, height: 300, crop: :fill %>" />
     <div class="card-product-infos">
       <div class="row justify-content-between px-3">
         <div>
