@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
+      flash[:notice] = "Congratulations, you added a new tool to the Pool!"
       redirect_to @item
     else
       render :new
@@ -38,6 +39,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
+      flash[:notice] = "Cool, you've updated your tool! "
       redirect_to @item
     else
       render :edit
@@ -46,6 +48,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+      flash[:notice] = "Your tool is no longer in our pool."
     redirect_to items_path
   end
 

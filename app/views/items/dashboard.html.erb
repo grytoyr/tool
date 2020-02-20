@@ -31,7 +31,7 @@
                         <% end %>
             </div>
             <div>
-              <%= cl_image_tag item.photo, class:"show-image" %>
+              <%= cl_image_tag item.photo.key, class:"show-image" %>
             </div>
           </li>
         <% end %>
@@ -50,7 +50,7 @@
              <p> Price: <%= rental.item.price %></p>
              <p>Owner: <%= link_to "#{rental.item.user.first_name}", items_path  %></p>
               <div>
-                <%= cl_image_tag rental.item.photo, class:"show-image" %>
+                <%= cl_image_tag rental.item.photo.key, class:"show-image" %>
               </div>
           </li>
         </div>
