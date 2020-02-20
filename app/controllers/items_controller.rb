@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.save(item_params)
+    if @item.update(item_params)
       redirect_to @item
     else
       render :edit
