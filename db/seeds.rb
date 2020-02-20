@@ -163,28 +163,28 @@ end
 # end
 
 
-puts 'Creating rentals...'
-rental_attributes = [
-  {
-    item: Item.first,
-    user: User.first,
-    start_date: Date.today,
-    end_date: Date.today
-  },
-    {
-    item: Item.last,
-    user: User.last,
-    start_date: Date.today,
-    end_date: Date.today
-  },
-    {
-    item: Item.all[1],
-    user: User.last,
-    start_date: Date.today,
-    end_date: Date.today
-  }
-]
-Rental.create!(rental_attributes)
+# puts 'Creating rentals...'
+# rental_attributes = [
+#   {
+#     item: Item.first,
+#     user: User.first,
+#     start_date: Date.today,
+#     end_date: Date.today
+#   },
+#     {
+#     item: Item.last,
+#     user: User.last,
+#     start_date: Date.today,
+#     end_date: Date.today
+#   },
+#     {
+#     item: Item.all[1],
+#     user: User.last,
+#     start_date: Date.today,
+#     end_date: Date.today
+#   }
+# ]
+# Rental.create!(rental_attributes)
 
 
 puts 'Finished!'

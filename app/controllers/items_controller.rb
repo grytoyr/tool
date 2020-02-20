@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
+
       flash[:notice] = "Congratulations, you added a new tool to the Pool!"
       redirect_to @item
     else
@@ -60,8 +61,9 @@ class ItemsController < ApplicationController
   end
 
   def dashboard
-    # @user = current_user
-    # @user_items = current_user.items
+    @user = current_user
+    @my_tools = current_user.items
+    @my_rentals = current_user.rentals
     # @rented_items = current_user.items.rentals
   end
 
