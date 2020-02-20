@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
   def index
 
     if params[:query].present?
-      @items = Item.global_search("#{params[:query]}")
+      @items = Item.global_search("#{params[:query]}").order(created_at: :desc)
     else
-      @items = Item.all
+      @items = Item.all.order(created_at: :desc)
     end
 
     @items_map = @items.geocoded #returns flats with coordinates
