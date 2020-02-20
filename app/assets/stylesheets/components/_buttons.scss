@@ -35,9 +35,15 @@
 
 .button-icon:hover {
   background-color: $tool-red;
+  text-decoration: none;
 
   i {
     color: white;
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
