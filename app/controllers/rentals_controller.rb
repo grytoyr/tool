@@ -11,6 +11,7 @@ class RentalsController < ApplicationController
     @rental.item = @item
     @rental.user = @user
     @rental.save
+    flash[:notice] = "Congratulations on renting a tool from the pool!"
     redirect_to item_path(@item)
   end
 
