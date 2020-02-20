@@ -19,11 +19,11 @@
           <li>
             <%= cl_image_tag item.photo.key, class:"db-image" %>
             <div class="db-el-container">
-              <h5><%= link_to "#{item.name }", item_path(item) %> </h5>
+              <h5><%= link_to "#{item.name}", item_path(item) %> </h5>
               <p><%= item.price %> kr / day</p>
               <p><%= item.available ? "available" : "unavailable" %></p>
               <div class="db-button-wrap">
-                <%= link_to  @item, class: 'button-icon',
+                <%= link_to  item_path(item), class: 'button-icon',
                     method: :delete,
                     data: { confirm: "Are you sure?" } do %>
                     <i class="far fa-trash-alt"></i>

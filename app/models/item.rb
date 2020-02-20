@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   ]
 
   belongs_to :user
-  has_many :rentals
+  has_many :rentals, dependent: :restrict_with_error
   has_many :users, through: :rentals
   has_one_attached :photo
   validates :photo, attached: true
