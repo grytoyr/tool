@@ -1,8 +1,15 @@
+<div class="form-background">
+  <div class="container-lg">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 tool-form" data-unavailable="<%= @item.unavailable_dates.to_json %>">
 
-<%= simple_form_for [@item, @rental] do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.submit "Rent", class: "btn btn-primary btn-lg btn-block btn-booking" %>
-<% end %>
+        <%= simple_form_for([@item, @rental]) do |f| %>
+          <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+        <% end %>
 
-<%= link_to "Back to Tool", @item  %>
+      </div>
+    </div>
+  </div>
+</div>
