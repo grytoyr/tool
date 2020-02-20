@@ -1,16 +1,15 @@
-<div class="product-cards">
-  <div class="card-product">
-    <img src= "<%= cl_image_path item.photo.key, width: 400, height: 300, crop: :fill %>" />
-    <div class="card-product-infos">
-      <div class="row justify-content-between px-3">
-        <div>
-          <h2><%= link_to item.name, item %></h2>
-          <p><strong><%= item.category %></strong></p>
-        </div>
-        <div class="flex-row text-right">
-          <h3><%= item.price %> Kr <span class="text-muted">/ day</span></h3>
-          <%= link_to "Rent", new_item_rental_path(item.id), class: "btn btn-success btn-md mt-2 text-center"%>
-        </div>
+
+<div class="card-product shadow">
+  <img src= "<%= cl_image_path item.photo.key, width: 400, height: 300, crop: :fill %>" />
+  <div class="card-product-infos">
+    <div class="row justify-content-between px-3">
+      <div>
+        <h2><%= link_to item.name, item %></h2>
+        <p><strong><%= item.category %></strong></p>
+      </div>
+      <div class="flex-row text-right">
+        <h3 class="mb-3"><%= item.price %> kr <span class="text-muted">/day</span></h3>
+        <%= link_to "More info", item, class: "rent-button"%>
       </div>
     </div>
   </div>

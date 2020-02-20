@@ -1,0 +1,10 @@
+<div class="map-shop-card">
+    <img src="<%= cl_image_path item.photo.key %>" />
+  <div class="map-title">
+    <p><%= item.category %></p>
+    <%= link_to item.name, item, class: "text-decoration-none" %>
+  </div >
+  <div class="map-cta">
+    <div class="map-price"><%= item.price %> kr NOK <span>/ per day</span></div>
+  </div>
+</div>

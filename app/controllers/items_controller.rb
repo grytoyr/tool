@@ -8,10 +8,11 @@ class ItemsController < ApplicationController
 
     @items_map = @items.geocoded #returns flats with coordinates
 
-    @markers = @items_map.map do |flat|
+    @markers = @items_map.map do |item|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: item.latitude,
+        lng: item.longitude,
+        infoWindow: render_to_string(partial: "shared/map_popup", locals: { item: item })
       }
     end
   end
