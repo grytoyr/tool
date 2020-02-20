@@ -6,60 +6,53 @@
   <div class='dashboard-element'>
 
     <div class='dashboard-header'>
-        <h2>My Tools</h2>
-      <div class="button-wrap">
-        <%= link_to new_item_path, class: 'button-icon' do %>
-          <i class="fas fa-plus"></i>
-          <% end %>
+      <h2>My Tools</h2>
+      <div class="db-button-wrap">
+      <%= link_to new_item_path, class: 'button-icon' do %>
+        <i class="fas fa-plus"></i>
+        <% end %>
       </div>
     </div>
 
       <ul class='dashboard-list'>
         <% current_user.items.each do |item| %>
-        <div class='dashboard-list-element'>
-           <li>
+          <li>
             <%= cl_image_tag item.photo.key, class:"db-image" %>
             <div class="db-el-container">
-              <h3><%= link_to "#{item.name }", item_path(item) %> </h3>
-              <h3><%= item.price %> kr / day</h3>
-              <div class="show-available">
-                <%= item.available ? "available" : "unavailable" %>
+              <h5><%= link_to "#{item.name }", item_path(item) %> </h5>
+              <p><%= item.price %> kr / day</p>
+              <p><%= item.available ? "available" : "unavailable" %></p>
+              <div class="db-button-wrap">
+                <%= link_to  @item, class: 'button-icon',
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do %>
+                    <i class="far fa-trash-alt"></i>
+                    <% end %>
+                    <%= link_to edit_item_path(item), class: 'button-icon' do %>
+                    <i class="fas fa-edit"></i>
+                    <% end %>
               </div>
             </div>
-            <div class="button-wrap">
-              <%= link_to  @item, class: 'button-icon',
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                  <i class="far fa-trash-alt"></i>
-                  <% end %>
-                  <%= link_to edit_item_path(item), class: 'button-icon' do %>
-                  <i class="fas fa-edit"></i>
-                  <% end %>
-            </div>
           </li>
-        </div>
         <% end %>
       </ul>
   </div>
-
     <div class='dashboard-element'>
-      <div class='dashboard-title'>
-         <h3>Tools I am renting</h3>
+
+      <div class='dashboard-header'>
+         <h2>Tools I am renting</h2>
       </div>
+
       <ul class='dashboard-list'>
         <%  current_user.rentals.each do |rental| %>
-          <div class="dashboard-list-element">
-              <li>
-                <div>
-                  <%= cl_image_tag rental.item.photo.key, class:"show-image" %>
-                </div>
-                <h3><%= link_to "#{rental.item.name }", item_path(rental.item) %> </h3>
-                <div class="price-wrap">
-                  <h3><%= rental.item.price %> kr / day </h3>
-                  <h3 class="show-owner"><%= link_to "#{rental.item.user.first_name}", items_path  %></h3>
-                </div>
-              </li>
-        </div>
+          <li>
+            <%= cl_image_tag rental.item.photo.key, class:"show-image" %>
+            <div class="db-el-container">
+              <h5><%= link_to "#{rental.item.name }", item_path(rental.item) %> </h5>
+              <p><%= rental.item.price %> kr / day </p>
+              <p class="show-owner"><%= link_to "#{rental.item.user.first_name}", items_path  %></p>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>
