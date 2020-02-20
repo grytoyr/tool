@@ -1,0 +1,11 @@
+<div class="tool-form hidden" data-unavailable="<%= @item.unavailable_dates.to_json %>">
+
+  <%= simple_form_for([item, rental]) do |f| %>
+    <div class="tool-form-input">
+      <%= f.input :start_date, as: :string, label: "From", placeholder: "Select date", wrapper_html: { class: "inline_field_wrapper" } %>
+      <%= f.input :end_date, as: :string, label: "To", placeholder: "Select date", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+    </div>
+    <%= f.submit "Rent tool", class: "rent-form-button" %>
+  <% end %>
+
+</div>
