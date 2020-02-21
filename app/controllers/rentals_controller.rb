@@ -13,6 +13,11 @@ class RentalsController < ApplicationController
       flash[:alert] = "Sorry, this tool is already booked for this period of time."
       render 'items/show'
     end
+
+    def destroy
+      @rental = Rental.find(params[:id]);
+      redirect_to dashboard
+    end
   end
 
  private
