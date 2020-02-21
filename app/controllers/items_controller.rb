@@ -54,16 +54,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.delete
+    if @item.destroy
       if @item.errors
-        @message = @item.errors.messages
+        @message = @item.errors.full_message
         flash[:notice] = "#{@message}"
         redirect_to dashboard_path
       else
         @message = "something went wrong here"
       end
+      redirect_to dashboard_path
       flash[:notice] = "Your tool is no longer in our pool."
-      redirect_to items_path
     end
   end
 
