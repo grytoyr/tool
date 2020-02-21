@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
     if @item.save
       flash[:notice] = "Congratulations, you added a new tool to the Pool!"
-      redirect_to @item
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       flash[:notice] = "Cool, you've updated your tool! "
-      redirect_to @item
+      redirect_to dashboard_path
     else
       render :edit
     end
