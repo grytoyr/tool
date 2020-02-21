@@ -1,12 +1,30 @@
 .form-background {
   min-height: 100vh;
   background: rgb(42,57,80);
-background: linear-gradient(-45deg, rgba(42,57,80,1) 0%, rgba(151,64,99,1) 100%);
+  background: linear-gradient(-45deg, rgba(42,57,80,1) 0%, rgba(151,64,99,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: top;
 }
 
   input{
     border-radius: 30px;
     font-size: 1rem;
+  }
+
+  .form-wrap {
+    padding: 100px 0px;
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .form-text {
+      color: white;
+    }
+
   }
 
   #item_photo {
@@ -32,3 +50,50 @@ background: linear-gradient(-45deg, rgba(42,57,80,1) 0%, rgba(151,64,99,1) 100%)
       color: white;
     }
   }
+
+  label {
+    color: white;
+  }
+
+  #user_email, #user_password, #user_first_name, #user_last_name, #user_address, #user_phone_number, #user_password_confirmation, #item_name, #item_description, #item_price, #item_category,  {
+    padding: 30px 30px;
+    border-radius: 40px;
+    border: none;
+
+    &:focus {
+      border: none;
+    }
+
+  }
+
+  input[type="file"] {
+  z-index: -1;
+  color: white;
+}
+
+.button-wrap {
+  position: relative;
+}
+
+.new-button {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #9c27b0;
+    font-size: 16px;
+    color: #fff;
+}
+
+  .form-button-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.button-space-form {
+  padding: 0px 10px;
+}
+
+
