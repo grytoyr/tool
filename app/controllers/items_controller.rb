@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @item.address = current_user.address
     if @item.save
       flash[:notice] = "Congratulations, you added a new tool to the Pool!"
       redirect_to dashboard_path
