@@ -5,13 +5,19 @@
   </div>
   <div class="card-product-infos">
     <div class="row justify-content-between px-3">
-      <div>
+      <div class="card-index-content">
         <h2><%= link_to item.name, item %></h2>
-        <h5><%= item.category %></h5>
-        <p><i class="fas fa-home pr-2"></i><%= item.user.address %></p>
-        <p><bold><%= item.user.first_name %></bold>  <i class="fas fa-phone pl-2 pr-1"></i><%= item.user.phone_number %></p>
-        <a href="#"><i class="far fa-envelope pr-2"></i><%= item.user.email %></a>
+        <div class="card-show-details">
+         <div class="card-index-owner-category">
+          <i class="fas fa-tools"></i>
+          <%= item.category %>
+        </div>
+      <div class="card-index-item-address">
+       <i class="fas fa-home"></i>
+       <%= item.user.address %>
+      </div>
 
+      </div>
       </div>
       <div class="d-flex flex-column text-right justify-content-between py-3">
         <div>
