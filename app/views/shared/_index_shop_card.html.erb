@@ -5,16 +5,17 @@
   </div>
   <div class="card-product-infos">
     <div class="row justify-content-between px-3">
-      <div>
+      <div class="card-index-content">
         <h2><%= link_to item.name, item %></h2>
-        <div class="show-details">
-         <div class="show-owner-category">
+        <div class="card-show-details">
+         <div class="card-index-owner-category">
           <i class="fas fa-tools"></i>
           <%= item.category %>
-       </div>
-
-        <p><i class="fas fa-home pr-2"></i><%= item.user.address %></p>
-
+        </div>
+      <div class="card-index-item-address">
+       <i class="fas fa-home"></i>
+       <%= item.user.address %>
+      </div>
 
       </div>
       </div>
