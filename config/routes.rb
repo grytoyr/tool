@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   get '/dashboard', to: 'items#dashboard', as: :dashboard
 
+  resources :rentals, only: [:destroy]
 
   devise_for :users
   root to: 'pages#home'
