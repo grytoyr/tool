@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   def index
 
     if params[:query].present?
-      @items = Item.global_search("#{params[:query]}").order(created_at: :desc)
+      items = Item.all.order(created_at: :desc)
+      @items = items.global_search("#{params[:query]}")
     else
       @items = Item.all.order(created_at: :desc)
     end
