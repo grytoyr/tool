@@ -18,7 +18,9 @@ class RentalsController < ApplicationController
   def destroy
     @user = current_user
     @rental = Rental.find(params[:id])
-    @rental.destroy
+    if @rental.destroy
+      flash[:notice] = "You successfully returned a tool!"
+    end
     @my_tools = current_user.items
     @my_rentals = current_user.rentals
     redirect_to dashboard_path(@user, @my_rentals, @my_tools)
