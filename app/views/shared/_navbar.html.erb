@@ -69,9 +69,7 @@
         <% end %>
 
     <!-- Search form -->
-    <form class="form-inline my-4 my-lg-0 search-navbar" >
-<!--       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="rent-button" type="submit">Search</button> -->
+    <div class="form-inline my-4 my-lg-0 search-navbar"   >
       <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -80,7 +78,7 @@
         %>
         <%= submit_tag "Search", class: "rent-button" %>
       <% end %>
-    </form>
+    </div>
   </div>
 
     <div class="right-menu-wrap">
