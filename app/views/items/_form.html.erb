@@ -13,8 +13,10 @@
         <%= f.input :price %>
         <%= f.input :category, collection: Item::CATEGORIES, selected: Item::CATEGORIES.first %>
         <%= f.input :photo, as: :file %>
-        <div class="submit">
+        <div class="form-button-wrap">
           <%= f.button :submit, class:"rent-button" %>
+          <div class="button-space-form">&nbsp;</div>
+           <%= link_to "Back to Tools List", items_path, class:"rent-button"  %>
         </div>
       <% end %>
 

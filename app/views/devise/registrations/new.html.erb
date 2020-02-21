@@ -1,8 +1,10 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-6 ">
+<div class="form-background">
 
-      <h2>Sign up</h2>
+  <div class="container-lg">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 form-wrap">
+
+      <h1>Sign up</h1>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -34,12 +36,17 @@
 
         </div>
 
-        <div class="form-actions d-flex align-items-center justify-content-center">
-          <%= f.button :submit, "Sign up", class:'btn btn-primary' %>
-          <%= render "devise/shared/links" %>
-        </div>
-      <% end %>
+        <div class="form-button-wrap">
 
+          <%= f.button :submit, "Sign up", class:"rent-button" %>
+          <div class="button-space-form">&nbsp;</div>
+          <%= link_to "Log in", new_session_path(resource_name), class:"rent-button" %>
+
+        </div>
+
+
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
