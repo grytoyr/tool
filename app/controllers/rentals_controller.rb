@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
     @user = current_user
     @rental.item_id = @item.id
     @rental.user_id = @user.id
+
     if @rental.save
       flash[:notice] = "Congratulations on renting a tool from the pool!"
       redirect_to success_item_path(@item)
