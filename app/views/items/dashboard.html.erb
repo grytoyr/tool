@@ -51,9 +51,9 @@
               <h5><%= link_to "#{rental.item.name }", item_path(rental.item) %> </h5>
               <p><%= rental.item.price %> kr / day </p>
               <p class="show-owner"><%= link_to "#{rental.item.user.first_name}", items_path  %></p>
-              <%#= link_to rental, class: "button-icon",
+              <%= link_to "Delete", rental_path(rental),
                 method: :delete,
-                data: {confirm: "Are you sure?"} do %>
+                data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm mt-2"%>
             </div>
           </li>
         <% end %>
