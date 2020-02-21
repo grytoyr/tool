@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-
       flash[:notice] = "Congratulations, you added a new tool to the Pool!"
       redirect_to @item
     else
@@ -56,9 +55,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
+    if @item.destroy
       flash[:notice] = "Your tool is no longer in our pool."
-    redirect_to items_path
+      redirect_to dashboard_path
+    else
+      @message = @item.errors.messages.first[1].join
+      flash[:alert] = "#{@message}"
+      redirect_to dashboard_path
+    end
   end
 
   def dashboard
