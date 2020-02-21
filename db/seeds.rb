@@ -8,7 +8,7 @@ User.destroy_all
 
 ADDRESS = [
   'Schweigaardsgate 34C, Oslo',
-  'Karl Johans gate 34C, Oslo',
+  'Karl Johans gate 34, Oslo',
   'Paulus Plass 1C, Oslo',
   'Sofies Plass 3b, Oslo',
   'Akersgata 55, Oslo',
@@ -17,7 +17,7 @@ ADDRESS = [
   'Henrik Ibsensgate 2, Oslo',
   'Akersbakken 2, Oslo',
   'Konowsgate 3, Oslo',
-  'Oddohagen 5b 3, Stavanger',
+  'Oddahagen 5B, Stavanger',
 ]
 
 CATEGORIES = [
