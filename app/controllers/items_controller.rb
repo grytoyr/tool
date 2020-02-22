@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.address = current_user.address
     @item.user = current_user
     @item.address = current_user.address
     if @item.save

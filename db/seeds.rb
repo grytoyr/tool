@@ -114,21 +114,22 @@ User.create!(users_attributes)
 
 puts 'Creating tools...'
 
-25.times do
+User.all.each do |user|
+  5.times do
+    file = URI.open(PICTURES.sample)
 
-  file = URI.open(PICTURES.sample)
+    item = Item.new(
+      name: Faker::Commerce.product_name,
+      description: Faker::Hipster.paragraphs(number: 2).join(" "),
+      price: rand(50..300),
+      user: User.all.sample,
+      category: CATEGORIES.sample,
+      address: user.address
+    )
 
-  item = Item.new(
-    name: Faker::Commerce.product_name,
-    description: Faker::Hipster.paragraphs(number: 2).join(" "),
-    price: rand(50..300),
-    user: User.all.sample,
-    category: CATEGORIES.sample,
-    address: ADDRESS.sample
-  )
-
-  item.photo.attach(io: file, filename: "#{Faker::Commerce.product_name}.png", content_type: 'image/png')
-  item.save!
+    item.photo.attach(io: file, filename: "#{Faker::Commerce.product_name}.png", content_type: 'image/png')
+    item.save!
+  end
 end
 
 # tools_attributes = [
